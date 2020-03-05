@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Font/Roboto-Light.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/menu/Menu.png" type="Texture" id=2]
+[ext_resource path="res://Assets/menu/QuitPressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/menu/Quit.png" type="Texture" id=4]
+[ext_resource path="res://Assets/menu/Start.png" type="Texture" id=5]
+[ext_resource path="res://Assets/menu/StartPressed.png" type="Texture" id=6]
+
+
+
+
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 10
+font_data = ExtResource( 1 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+
+[node name="Text" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -289.0
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tuto" type="Label" parent="Text"]
+margin_right = 1080.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.282353, 0.282353, 0.282353, 1 )
+text = "Swipe left and right for dodge"
+align = 1
+autowrap = true
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -410.0
+margin_bottom = 410.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="TextureButton" parent="Buttons"]
+margin_right = 1080.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 400 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="Buttons"]
+margin_top = 420.0
+margin_right = 1080.0
+margin_bottom = 820.0
+rect_min_size = Vector2( 0, 400 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+expand = true
+stretch_mode = 5
