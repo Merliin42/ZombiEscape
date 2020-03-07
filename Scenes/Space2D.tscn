@@ -85,10 +85,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Zombies:position")
@@ -163,7 +163,7 @@ tracks/6/keys = {
 "values": [ false, true ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Car/Sacrifice:visible")
+tracks/7/path = NodePath("Sacrifice:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -174,6 +174,16 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Sacrifice:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1670, -0.25, 0, 0.25, 0, 1670, -0.25, 0, 0.25, 0, 2000, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.5, 3 )
+}
 
 [node name="Space2D" type="Node2D"]
 script = ExtResource( 63 )
@@ -182,15 +192,16 @@ script = ExtResource( 63 )
 position = Vector2( 536, 960 )
 scale = Vector2( 1.88122, 1.88122 )
 frames = SubResource( 1 )
-frame = 31
+frame = 51
 playing = true
 
-[node name="Car" parent="." instance=ExtResource( 62 )]
-
-[node name="Sacrifice" parent="Car" instance=ExtResource( 65 )]
+[node name="Sacrifice" parent="." instance=ExtResource( 65 )]
 visible = false
-position = Vector2( 60, 0 )
+position = Vector2( 610, 2000 )
+rotation = 1.5708
 texture = ExtResource( 66 )
+
+[node name="Car" parent="." instance=ExtResource( 62 )]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

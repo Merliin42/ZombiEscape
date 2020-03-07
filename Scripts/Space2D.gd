@@ -15,8 +15,8 @@ func _on_Timer_timeout():
 
 func _on_Car_area_entered(area):
 	$Car.open_door()
-	$Car/Sacrifice.change_texture()
-	$Car/Sacrifice.position.x = $Car.position.x + 20
+	$Sacrifice.change_texture()
+	$Sacrifice.position.x = $Car.position.x + 100
 	$AnimationPlayer.play("Hitted")
 
 
