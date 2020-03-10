@@ -18,8 +18,8 @@ func displacement(direction : String):
 func get_hitted() -> bool :
 	return hitted
 
-func set_hitted(hitted) -> void :
-	self.hitted = hitted
+func set_hitted(hit) -> void :
+	self.hitted = hit
 
 func open_door() -> void :
 	$AnimatedSprite.play("openDoor")
